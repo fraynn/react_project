@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./css/App.css";
+import data from "./data";
+import ReferenceList from "./ReferenceList";
+
 
 class App extends Component {
   render() {
@@ -20,6 +23,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <ReferenceList data={data.entities} />
       </div>
     );
   }
