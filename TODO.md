@@ -1,0 +1,4 @@
+- add bookmarked check on cards
+- redux actions & reducers for bookmarking
+- fetch real data
+- display or filter bookmarked items
