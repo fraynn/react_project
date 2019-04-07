@@ -3,8 +3,8 @@ import ReferenceCard from './ReferenceCard';
 
 const ReferenceList = ({data}) => (
     <ul>
-        {data.map(element => (
-            <ReferenceCard { ...element}/>
+        {data.map(entity => (
+            <ReferenceCard key={entity.key} id={entity.key} {...entity}/>
         ))}
     </ul>
 );
