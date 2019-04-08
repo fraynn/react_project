@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./css/App.css";
-import data from "./data";
+import React, { Component, Fragment } from "react";
+import logo from "../assets/logo.svg";
+import "../assets/css/App.css";
+import data from "../data";
 import ReferenceList from "./ReferenceList";
-
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Fragment>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -23,8 +22,10 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <ReferenceList data={data.entities} />
-      </div>
+        <main>
+          <ReferenceList data={data.entities} />
+        </main>
+      </Fragment>
     );
   }
 }
