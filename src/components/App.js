@@ -1,11 +1,21 @@
 import React, { Component, Fragment } from "react";
+import {connect} from 'react-redux';
 import logo from "../assets/logo.svg";
 import "../assets/css/App.css";
 import data from "../data";
 import ReferenceList from "./ReferenceList";
 
+import { getReferences } from '../actions';
+
 class App extends Component {
+  
+  componentDidMount() {
+    const {dispatch} = this.props;
+    dispatch(getReferences(data));
+  }
+
   render() {
+    const {references} = this.props;
     return (
       <Fragment>
         <header className="App-header">
@@ -23,11 +33,16 @@ class App extends Component {
           </a>
         </header>
         <main>
-          <ReferenceList data={data.entities} />
+          <ReferenceList data={references} />
         </main>
       </Fragment>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  references: state.references,
+  displayFilter: state.displayFilter
+});
+
+export default connect(mapStateToProps)(App);
