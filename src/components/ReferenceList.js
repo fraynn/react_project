@@ -1,12 +1,17 @@
-import React from "react";
-import { connect } from 'react-redux';
-import ReferenceCard from "./ReferenceCard";
+import React from 'react';
+import ReferenceCard from './ReferenceCard';
 
-const ReferenceList = ({ data }) => (
+const ReferenceList = ({ data, toggleBookmark }) => (
   <ul>
-    {data.map(entity => (
-      <ReferenceCard key={entity.key} id={entity.key} {...entity} />
+    {data.map(ref => (
+      <ReferenceCard
+        key={ref.key}
+        id={ref.key}
+        onClick={() => toggleBookmark(ref.key)}
+        {...ref}
+      />
     ))}
   </ul>
 );
+
 export default ReferenceList;

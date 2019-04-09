@@ -6,27 +6,27 @@ export const RECEIVE_REFERENCES = 'RECEIVE_REFERENCES';
 
 
 export function toggleBookmark(key) {
-    return {
-        type: TOGGLE_BOOKMARK,
-        key
-    }
+  return {
+    type: TOGGLE_BOOKMARK,
+    key
+  }
 }
 
 export function setFilter(filter) {
-    return {
-        type: SET_FILTER,
-        filter
-    }
+  return {
+    type: SET_FILTER,
+    filter
+  }
 }
 
 export function getReferences(data) {
-    return dispatch =>
+  return dispatch =>
     dispatch(receiveReferences(data.entities));
 }
 
 function receiveReferences(json) {
-    return {
-      type: RECEIVE_REFERENCES,
-      references: json
-    }
+  return {
+    type: RECEIVE_REFERENCES,
+    references: json
   }
+}
