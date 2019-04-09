@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from 'react-redux';
 import ReferenceCard from "./ReferenceCard";
 
 const ReferenceList = ({ data }) => (
